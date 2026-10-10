@@ -1,7 +1,7 @@
 {
-  "name": "speech-emotion-research",
+  "name": "02-wav2vec2-ser",
   "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bookworm",
-  "postCreateCommand": "pip install --index-url https://download.pytorch.org/whl/cpu torch==2.6.0 torchaudio==2.6.0 && pip install -r requirements.txt",
+  "postCreateCommand": "pip install --index-url https://download.pytorch.org/whl/cpu torch==2.6.0 torchaudio==2.6.0 && pip install -r 02-wav2vec2-ser/requirements.txt",
   "customizations": {
     "vscode": {
       "extensions": [

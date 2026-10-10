@@ -1,0 +1,26 @@
+# Deep learning
+torch==2.6.0
+torchaudio==2.6.0
+
+# Pretrained speech model
+transformers==4.49.0
+huggingface-hub==0.29.3
+safetensors==0.5.3
+
+# Audio processing
+librosa==0.10.2.post1
+soundfile==0.13.1
+numpy==1.26.4
+
+# Data processing and evaluation
+scikit-learn==1.6.1
+pandas==2.2.3
+
+# Visualization
+matplotlib==3.10.0
+
+# Experiment configuration
+PyYAML==6.0.2
+
+# Testing
+pytest==8.3.5

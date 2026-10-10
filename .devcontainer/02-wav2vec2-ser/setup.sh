@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-sudo apt-get install -y --no-install-recommends tmux
-
 cd /workspaces/speech-representation-learning/02-wav2vec2-ser
 
 python -m venv .venv

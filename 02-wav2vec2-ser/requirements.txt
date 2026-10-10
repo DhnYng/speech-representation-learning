@@ -24,3 +24,4 @@ PyYAML==6.0.2
 
 # Testing
 pytest==8.3.5
+.devcontainer/02-wav2vec2-ser/requirements.txt

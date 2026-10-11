@@ -1,6 +1,6 @@
 # Deep learning
-torch==2.6.0
-torchaudio==2.6.0
+torch==2.8.0
+torchaudio==2.8.0
 
 # Pretrained speech model
 transformers==4.49.0

@@ -4,7 +4,6 @@ import glob
 
 import torch
 import torchaudio
-import numpy as np
 
 from torch.utils.data import Dataset
 
@@ -12,7 +11,7 @@ from config import (
     DATA_PATH,
     EMOTIONS,
     SAMPLE_RATE,
-    MAX_AUDIO_LENGTH
+    MAX_AUDIO_LENGTH,
 )
 
 
@@ -133,15 +132,12 @@ class IEMOCAPDataset(Dataset):
 
         sample = self.samples[idx]
 
-        waveform, sr = torchaudio.load(
-            sample["audio_path"]
-        )
+        waveform, sr = torchaudio.load(sample["audio_path"])
 
         if waveform.shape[0] > 1:
             waveform = waveform.mean(dim=0, keepdim=True)
 
         if sr != self.sample_rate:
-
             resampler = torchaudio.transforms.Resample(
                 orig_freq=sr,
                 new_freq=self.sample_rate
@@ -149,12 +145,9 @@ class IEMOCAPDataset(Dataset):
 
             waveform = resampler(waveform)
 
-        max_samples = int(
-            self.sample_rate * self.max_audio_length
-        )
+        max_samples = int(self.sample_rate * self.max_audio_length)
 
         if waveform.shape[1] > max_samples:
-
             waveform = waveform[:, :max_samples]
 
         waveform = waveform.squeeze(0)

@@ -5,7 +5,7 @@ from transformers import AutoFeatureExtractor
 
 from dataset import IEMOCAPDataset
 
-from config import (
+from configs.config import (
     SAMPLE_RATE,
     MODEL_NAME,
     BATCH_SIZE,

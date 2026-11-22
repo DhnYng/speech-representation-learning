@@ -7,7 +7,7 @@ import torchaudio
 
 from torch.utils.data import Dataset
 
-from config import (
+from configs.config import (
     DATA_PATH,
     EMOTIONS,
     SAMPLE_RATE,

@@ -2,6 +2,9 @@ import torch
 import torch.nn as nn
 from transformers import Wav2Vec2Model
 
+from configs.config import MODEL_NAME
+
+
 def masked_mean_pooling(hidden_states, attention_mask):
     """
     hidden_states:  [B, T, D]
@@ -16,10 +19,11 @@ def masked_mean_pooling(hidden_states, attention_mask):
 
     return summed / counts
 
+
 class FrozenWav2Vec2(nn.Module):
     def __init__(
         self,
-        model_name="facebook/wav2vec2-base",
+        model_name=MODEL_NAME,
         num_classes=4,
     ):
         super.__init__()
@@ -61,10 +65,11 @@ class FrozenWav2Vec2(nn.Module):
 
         return logits, hidden_states
 
+
 class FineTunedWav2Vec2(nn.Module):
     def __init__(
         self,
-        model_name="facebook/wav2vec2-base",
+        model_name=MODEL_NAME,
         num_classes=4,
     ):
         super().__init__()
